@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, Toast} from 'ionic-angular';
 import {Data} from '../../providers/data'
+import {Todo} from "../../models/todo";
 
 /*
  Generated class for the NewTodo page.
