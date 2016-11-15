@@ -7,6 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-    hi
+    <ion-list *ngIf="todos">
+        <ion-item *ngFor="let todo of todos">
+            <ion-label>{{todo.title}}</ion-label>
+            <ion-checkbox [(ngModel)]="todo.complete">
+            </ion-checkbox>
+        </ion-item>
+    </ion-list>
+    <p *ngIf="!todos"> No todos </p>
     <button ion-button color="light" (click)="newTodo()">New TODO</button>
 </ion-content>

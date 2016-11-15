@@ -35,7 +35,6 @@ export class NewTodoPage {
             toast.present();
 
             this.navCtrl.pop();
-
         }
 
     }
