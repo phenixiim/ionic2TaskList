@@ -6,13 +6,23 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>new-todo</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>new-todo</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content padding class="page-new-todo">
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Title:</ion-label>
+            <ion-input [(ngModel)]="todo.title" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Complete</ion-label>
+            <ion-checkbox [(ngModel)]="todo.complete"></ion-checkbox>
+        </ion-item>
+        <button clear (click)="save()">Save</button>
+    </ion-list>
 </ion-content>
