@@ -1,18 +1,26 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 
-/*
-  Generated class for the Data provider.
+declare var firebase: any;
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
+/*
+ Generated class for the Data provider.
+
+ See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+ for more info on providers and Angular 2 DI.
+ */
 @Injectable()
 export class Data {
+    private _db: any;
+    private _todosRef: any;
 
-  constructor(public http: Http) {
-    console.log('Hello Data Provider');
-  }
+    constructor() {
+        this._db = firebase.database().ref('/');
+        this._todosRef = firebase.database().ref('todos');
+        this._todosRef.on('child_added', this.handleData, this);
+    }
 
+    handleData(snap){
+
+    }
 }
